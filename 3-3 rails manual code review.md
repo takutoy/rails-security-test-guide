@@ -287,7 +287,7 @@ TBW
 
 独自のルールに基づいたコードレビューの例を3つ挙げました。
 
-1. `.permit` で検索して、不適切な Strong Parameters 設定を発見する
+1. `.permit` で検索し、不適切な Strong Parameters 設定を発見する
 2. `params\[:.*id\]` で検索し、権限昇格の問題を発見する
 3. `Time\.(now|current|zone\.now)`で検索し、ID重複によるレースコンディションを発見する
 
