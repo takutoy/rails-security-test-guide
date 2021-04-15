@@ -167,7 +167,7 @@ end
 
 ### 補足
 
-凝ったCROS設定が必要な場合は[`rack-cors`](https://github.com/cyu/rack-cors)を使う場合もありますが、その場合も `Access-Control-Allow-Origin` の妥当性は確認しましょう。
+凝ったCORS設定が必要な場合は[`rack-cors`](https://github.com/cyu/rack-cors)を使う場合もありますが、その場合も `Access-Control-Allow-Origin` の妥当性は確認しましょう。
 
 CORSについての詳細は[MDN: オリジン間リソース共有 (CORS)](https://developer.mozilla.org/ja/docs/Web/HTTP/CORS)を参照してください。
 
@@ -184,7 +184,7 @@ CORSについての詳細は[MDN: オリジン間リソース共有 (CORS)](http
 固定値
 
 ```ruby
-f = File.open("tmp/upload-file", "w")
+File.open("tmp/upload-file", "w")
 ```
 
 ユーザがアップロードしたファイルの名前
@@ -192,7 +192,7 @@ f = File.open("tmp/upload-file", "w")
 ```ruby
 file = fileupload_param[:file]
 output_path = Rails.root.join('public', file.original_filename)
-f = File.open(output_path, "w")
+File.open(output_path, "w")
 ```
 
 ※該当するロジックがアクションから呼び出されない場合は安全です。
@@ -203,7 +203,7 @@ f = File.open(output_path, "w")
 
 ```ruby
 output_path = Rails.root.join('tmp', "#{SecureRandom.uuid}")
-f = File.open(output_path, "w")
+File.open(output_path, "w")
 ```
 
 ### 補足
@@ -225,7 +225,7 @@ f = File.open(output_path, "w")
 IDが時刻のみで構成されている
 
 ```ruby
-f = File.open("tmp/#{Time.zone.now.to_i}", "w")
+File.open("tmp/#{Time.zone.now.to_i}", "w")
 ```
 
 ※概要するロジックがアクションから呼び出されない場合は安全です
@@ -235,7 +235,7 @@ f = File.open("tmp/#{Time.zone.now.to_i}", "w")
 IDが時刻＋ユニークな値で構成されている
 
 ```ruby
-f = File.open("tmp/#{Time.zone.now.to_i}_#{SecureRandom.uuid}", "w")
+File.open("tmp/#{Time.zone.now.to_i}_#{SecureRandom.uuid}", "w")
 ```
 
 ### 補足
