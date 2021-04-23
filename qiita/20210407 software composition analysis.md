@@ -232,13 +232,13 @@ jquery 1.8.3 has known vulnerabilities: severity: medium; CVE: CVE-2012-6708, bu
 サンプルスクリプト
 
 ```bash
-retire --outputformat json 2>&1 \
+retire -j --outputformat json 2>&1 \
 | jq -r '["component", "version", "advisory", "title", "url", "file"], 
   (.data[] | . as $data | .results[] | . as $result | .vulnerabilities[] | 
     [
       $result.component,
       $result.version,
-      (.identifiers.CVE | join(", ")),
+      if .identifiers.CVE then (.identifiers.CVE | join(", ")) else "" end,
       .identifiers.summary,
       (.info | join(", ")),
       $data.file
