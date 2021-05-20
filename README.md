@@ -1,5 +1,11 @@
 # Rails security testing guide
 
+## 前提知識
+
+- [セキュリティテスターのためのRuby on Rails コードリーディング](https://docs.google.com/presentation/d/18zITuFTR0AvYEZhuBc-drzuc6OTyAGovwO0GSuXZu5s/edit?usp=sharing)
+
+## テストガイド
+
 - 4.01 情報収集
   - [06 エントリーポイントの特定](01-Information_Gathering/06-Identify_Application_Entry_Points.md)
 - 4.05 認可
