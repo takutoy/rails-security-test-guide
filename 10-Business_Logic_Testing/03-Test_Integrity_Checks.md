@@ -53,20 +53,10 @@ Create, Update リクエストのパラメータを書き換え、改ざんし�
 
 元のリクエスト
 
-```http
-POST http://127.0.0.1:3000/users/9.json HTTP/1.1
-=== truncated ===
-
-utf8=%E2%9C%93&_method=patch&authenticity_token=0z21aWys7V6qyJIHnfeJUA%2F9ivbhuYfB58YWX%2Fi5wKTTwT1YzrEBFxVETMxmynn%2BErkT0n%2FtPpf3bwK735k2lw%3D%3D&user%5Bid%5D=9&user%5Bemail%5D=b%40example.com&user%5Bfirst_name%5D=tanaka&user%5Blast_name%5D=ichiro&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=
-```
+![](images/2021-05-20-22-09-04.png)
 
 改ざん後のリクエスト
 
 `&user%5Badmin%5D=true` を追加します。
 
-```http
-POST http://127.0.0.1:3000/users/9.json HTTP/1.1
-=== truncated ===
-
-utf8=%E2%9C%93&_method=patch&authenticity_token=0z21aWys7V6qyJIHnfeJUA%2F9ivbhuYfB58YWX%2Fi5wKTTwT1YzrEBFxVETMxmynn%2BErkT0n%2FtPpf3bwK735k2lw%3D%3D&user%5Bid%5D=9&user%5Bemail%5D=b%40example.com&user%5Bfirst_name%5D=tanaka&user%5Blast_name%5D=ichiro&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=&user%5Badmin%5D=true
-```
+![](images/2021-05-20-22-09-27.png)
