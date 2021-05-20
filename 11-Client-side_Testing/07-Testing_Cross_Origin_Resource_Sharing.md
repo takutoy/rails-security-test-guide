@@ -20,13 +20,13 @@ CORSの設定ミスは Same Origin Policy によるセキュリティを緩め�
 headers['Access-Control-Allow-Origin'] = '*'
 ```
 
-### Originリクエストヘッダを検証せずにコピー
+Originリクエストヘッダを検証せずにコピー
 
 ```ruby
 headers['Access-Control-Allow-Origin'] = request.headers["Origin"]
 ```
 
-### null
+null
 
 ```ruby
 headers['Access-Control-Allow-Origin'] = 'null'
@@ -34,15 +34,15 @@ headers['Access-Control-Allow-Origin'] = 'null'
 
 ※非公開情報を含まない、オープンなAPIの場合のみ * を設定しても安全です。
 
-## 安全なコードの例
+### 安全なコードの例
 
-### 信頼できる Origin
+信頼できる Origin
 
 ```ruby
 headers['Access-Control-Allow-Origin'] = `https://our-website.example.com'
 ```
 
-### 許可リストに基づいて検証された request.headers["Origin"]をコピー
+許可リストに基づいて検証された request.headers["Origin"]をコピー
 
 ```ruby
 if %w(https://example.com https://example.jp).include?(request.headers["Origin"])

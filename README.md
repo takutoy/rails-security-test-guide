@@ -7,6 +7,8 @@
 - 4.06 セッション管理
   - [05 Cross Site Request Forgery (CSRF)](06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery.md)
 - 4.07 入力値検証
+- 4.10 ビジネスロジック
+  - [03 Testing Integrity Checks](10-Business_Logic_Testing/03-Test_Integrity_Checks.md)
 - 4.11 クライアントサイド
   - [11 Cross Origin Resource Sharing (CORS)](11-Client-side_Testing/07-Testing_Cross_Origin_Resource_Sharing.md)
 - 4.12 API
