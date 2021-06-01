@@ -6,6 +6,8 @@ URL等に含まれるリソースIDが改ざんされて他のユーザのリソ
 
 このテストでは、リソースへのアクセスが適切に制御されていて、悪意あるユーザによる不正な参照や変更から保護されているか検証します。
 
+[4.05.04 Bypassing Authorization Schema](02-Testing_for_Bypassing_Authorization_Schema.md) も併せて参照してください。
+
 ## 静的テスト
 
 コントローラ、アクション、クエリに認可が含まれていることを確認します。
@@ -36,7 +38,7 @@ class ArticlesController < ApplicationController
   end
 ```
 
-コントローラやアクションでアクセス制御している場合も安全です。
+横の権限昇格がない場合、コントローラやアクションでアクセス制御していれば安全です。
 
 ```ruby
 class AdminsController < ApplicationController
@@ -47,6 +49,21 @@ class AdminsController < ApplicationController
     redirect_to @article
   end
 ```
+
+認可ライブラリに cancancan を使っている場合、下記をレビューします。
+
+- アクションに `authorize!` があること
+- Ability に定義された認可ロジックの妥当性
+
+認可ライブラリに pundict を使っている場合、下記をレビューします。
+
+- アクションに `authorize` があること
+- Policy に定義された認可ロジックの妥当性
+
+<!--
+https://github.com/CanCanCommunity/cancancan
+https://github.com/varvet/pundit
+-->
 
 ## 動的テスト
 
