@@ -48,7 +48,7 @@ User.find(params[:id])
 
 Brakeman はSQLインジェクションだけでなく、クロスサイトスクリプティングやオープンリダイレクトなど、様々な脆弱性にも対応しています。
 
-Brakeman のインストールと使い方は [GitHubリポジトリのREADME](https://github.com/presidentbeef/brakeman) を参照してください。
+Brakeman のインストールと使い方は [GitHubリポジトリのREADME](https://github.com/presidentbeef/brakeman#installation) を参照してください。
 
 Brakeman を使ってSQLインジェクションが検出した例
 
@@ -81,7 +81,7 @@ Line: 52
 
 [sqlmap](https://sqlmap.org/) はSQLインジェクションの自動テストツールです。
 
-sqlmap のインストールと使い方は [GitHubリポジトリのREADME](https://github.com/presidentbeef/brakeman#installation) を参照してください。
+sqlmap のインストールと使い方は [GitHubリポジトリのREADME](https://github.com/sqlmapproject/sqlmap#installation) を参照してください。
 
 sqlmap の実行例
 
