@@ -81,12 +81,12 @@ Line: 52
 
 [sqlmap](https://sqlmap.org/) はSQLインジェクションの自動テストツールです。
 
-sqlmap のインストールと使い方は [GitHubリポジトリのREADME](https://github.com/sqlmapproject/sqlmap) を参照してください。
+sqlmap のインストールと使い方は [GitHubリポジトリのREADME](https://github.com/presidentbeef/brakeman#installation) を参照してください。
 
 sqlmap の実行例
 
 ```shell
-$ ./sqlmap.py -u http://127.0.0.1:3000/foobars?a=1&b=2&c=3
+$ ./sqlmap.py -u 'http://127.0.0.1:3000/foobars?a=1&b=2&c=3'
 ```
 
 sqlmap はテストするパラメータを自動的に判定してくれますが、パラメータの位置とDBMSを指定すると不要なテストを省略できます。
