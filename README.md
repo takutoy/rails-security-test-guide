@@ -13,7 +13,8 @@
   - [04 Insecure Direct Object Reference (IDOR)](05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References.md)
 - 4.06 セッション管理
   - [05 Cross Site Request Forgery (CSRF)](06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery.md)
-- 4.07 入力値検証
+- 4.07 入力値の取り扱い
+  - [05 SQL Injection](07-Input_Validation_Testing/05-Testing_for_SQL_Injection.md)
 - 4.10 ビジネスロジック
   - [03 Testing Integrity Checks - Mass Assignment](10-Business_Logic_Testing/03-03-Test_Integrity_Checks_Mass_Assignment.md)
 - 4.11 クライアントサイド
