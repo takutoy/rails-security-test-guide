@@ -121,9 +121,10 @@ params.require(:user).permit(:email, :first_name, :last_name)
 params.require(:user).permit(:email, :first_name, :last_name, :admin) if user.admin
 ```
 
-### 検討事項
+### その他の留意事項
 
-- 登録時のみ設定可能な属性がある場合（例えば生年月日）、create と update とでは異なる Strong Parameters が使われているはず
+- 外部キーの更新が許可されている場合、外部キーの値が妥当であることを検証していること(外部キーに別ユーザのリソースIDを設定できないこと)
+- 登録時のみ設定可能な属性がある場合（例えば生年月日）、create と update とでは異なる Strong Parameters が使われていること
 
 ## 動的テスト
 
