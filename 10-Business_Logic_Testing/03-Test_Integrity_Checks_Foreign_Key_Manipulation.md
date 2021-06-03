@@ -164,7 +164,7 @@ params.require(:issue).permit(:title, :description, :user_id)
 
 ### 外部キーを検証するコードの例
 
-`user_id` の値を検証しているかを確認します。
+update が実行される前に、`user_id` パラメータが検証されているかを確認します。
 
 検証がない場合、脆弱な可能性があります。
 
@@ -176,7 +176,7 @@ unless @organization.users.exists?(id: params[:issue][:user_id])
 end
 ```
 
-ただし検証ロジックの有効性を確認するために、動的テストも実施することを推奨します。
+※検証ロジックの有効性を確認するため、動的テストも実施することを推奨します
 
 ## 動的テスト
 
