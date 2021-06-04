@@ -36,7 +36,7 @@ end
   <% @issues.each do |issue| %>
   <tr>
     <td><%= issue.title %></td>
-    <td><%= issue.dead_line %></td>
+    <td><%= issue.deadline %></td>
     <td><%= issue.user.name %></td>
     <td><%= issue.user.email %></td>
   </tr>
@@ -86,7 +86,7 @@ entity "Issue" as e03 {
   --
   title : string
   description : string
-  dead_line : datetime
+  deadline : datetime
 }
 
 e01 ||..o{ e02
@@ -113,7 +113,7 @@ user
 
 issue
 
-|id|name|dead_line|organization_id|user_id|
+|id|name|deadline|organization_id|user_id|
 |:--|:--|:--|:--|:--|
 |1|書類を作る|5/12|1|1|
 |2|書類を送る|5/13|1|2|
