@@ -91,7 +91,7 @@ $ ./sqlmap.py -u 'http://127.0.0.1:3000/foobars?a=1&b=2&c=3'
 
 sqlmap はテストするパラメータを自動的に判定してくれますが、パラメータの位置とDBMSを指定すると不要なテストを省略できます。
 
-下記は DBMS が `postgresql` で、怪しいパラメータが `params[:a]` と `params[:c]` であると分かっている場合の実行例です。
+下記は DBMS が `postgresql` で、SQLに使われるパラメータが `params[:a]` と `params[:c]` であると分かっている場合の実行例です。
 
 ```shell
 $ ./sqlmap.py -u 'http://127.0.0.1:3000/foobars?a=*&b=2&c=*' --dbms=postgresql

@@ -26,7 +26,7 @@
 ```ruby
 # app/controllers/issues_controller.rb
 def index
-    @issues = @organization.issues
+    @issues = @organization.issues.includes(:user)
 end
 ```
 
