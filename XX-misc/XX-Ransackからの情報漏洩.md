@@ -1,4 +1,4 @@
-# 4.12.xx Ransack による情報漏洩
+# 4.XX.xx Ransack による情報漏洩
 
 ## 概要
 ​Ransack は高度な検索機能を容易に実装できるGemです。
