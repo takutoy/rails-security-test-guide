@@ -35,8 +35,8 @@ Railsでアプリケーション開発をしている組織のセキュリティ
   - [03 Testing Integrity Checks - 外部キーの不正な更新](10-Business_Logic_Testing/03-Test_Integrity_Checks_Foreign_Key_Manipulation.md)
 - 4.11 クライアントサイド
   - [11 Cross Origin Resource Sharing (CORS)](11-Client-side_Testing/07-Testing_Cross_Origin_Resource_Sharing.md)
-- 4.12 API
-  - [x1 Ransack による情報漏洩](12-API_Testing/xx-Testing_Ransack.md)
 - 4.xx 未分類
   - [x1 JSONからの情報漏洩](XX-misc/XX-JSONからの情報漏洩.md)
   - [x2 Denial of Service (DoS) - 上限値がない](XX-misc/XX-Denial_of_Service_上限値がない.md)
+  - [x3 Ransack による情報漏洩](XX-misc/XX-Ransackからの情報漏洩.md)
+  - [x4 脆弱性が報告されているGemの使用](XX-misc/XX-脆弱性が報告されているGemの使用.md)
