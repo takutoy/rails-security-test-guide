@@ -173,4 +173,29 @@ TBW
 
 ### GET以外のアクションのテスト：create, update, destroy
 
-TBW
+※注意：GET以外のアクションを実行するとリソースが変更されたり破壊されたりする危険性があります。テスト実行の際は十分注意してください。
+
+#### CSRFトークン検討
+
+RailsではGET以外のアクション(POST, PUT, PATCH, DELETE)は既定でトークンによるCSRF対策が有効になっています。
+
+そのため、Webブラウザを使わずにリクエストを送るにはCSRFトークンを付与する必要があります。
+
+Rails ではセッション(Cookie)に紐づくCSRFトークンをHTMLの`<head>`の中に発行します。
+
+```html
+<html>
+  <head>
+    ...
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="DFZR1rcR...【省略】...YwQsog==" />
+```
+
+このトークンをリクエストヘッダ `X-CSRF-TOKEN` に乗せればCSRFトークン検証を突破できます。
+
+```http
+POST /hoge HTTP/1.1
+Host: 127.0.0.1
+Cookie: _hogehoge_session=0123456789abcdef...
+X-CSRF-TOKEN: DFZR1rcR...【省略】...YwQsog==
+```
