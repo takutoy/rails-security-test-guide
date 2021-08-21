@@ -36,6 +36,7 @@ config.session_store :cookie_store, expire_after: 1.days
 
 ## 動的テスト
 
+TBD
 
 ## references
 
