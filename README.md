@@ -28,6 +28,7 @@ Railsでアプリケーション開発をしている組織のセキュリティ
   - [04 Insecure Direct Object Reference (IDOR)](05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References.md)
 - 4.06 セッション管理
   - [05 Cross Site Request Forgery (CSRF)](06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery.md)
+  - [07 Session Timeout](06-Session_Management_Testing/07-Testing_Session_Timeout.md)
 - 4.07 入力値の取り扱い
   - [05 SQL Injection](07-Input_Validation_Testing/05-Testing_for_SQL_Injection.md)
 - 4.10 ビジネスロジック
