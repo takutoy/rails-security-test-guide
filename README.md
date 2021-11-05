@@ -1,26 +1,22 @@
 # Rails security testing guide
 
-Rails アプリケーションの脆弱性を発見するためのセキュリティテストガイドです。
+Rails アプリケーションの脆弱性を発見し検証するためのセキュリティテストガイドです。脆弱性ごとに観点と手法を解説します。
 
-脆弱性の種類ごとに静的テスト・動的テストのやり方を解説します。
-
-- 静的テスト手法
-  - ソースコードレビューによる脆弱性の発見
-  - SASTツールを使ったソースコード検査
-- 動的テスト手法
-  - 一般的な脆弱性のテスト手法
-  - Railsアプリケーションに特化したテスト手法
+1. 静的テスト（ソースコードレビュー）による脆弱性の発見
+2. 動的テスト（脆弱性診断）による脆弱性の検証
 
 ## 想定する利用者
 
-Railsでアプリケーション開発をしている組織のセキュリティテスター向けですが、セキュリティに関心がある開発チームやQAチームにも役立つかもしれません。
+Railsでアプリケーション開発をしている組織のセキュリティ担当者を想定しています。Railsのソースコードをある程度読めるスキルが必要です。
 
-## 前提知識
-
-- [セキュリティテスターのためのRuby on Rails コードリーディング](https://docs.google.com/presentation/d/18zITuFTR0AvYEZhuBc-drzuc6OTyAGovwO0GSuXZu5s/edit?usp=sharing)
+脆弱性を作りこみたくない Rails アプリ開発者にも役立つかもしれません。
 
 ## 目次
 
+番号は [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) に合わせています。
+
+- 前提知識
+  - [セキュリティテスターのためのRuby on Rails コードリーディング](https://docs.google.com/presentation/d/18zITuFTR0AvYEZhuBc-drzuc6OTyAGovwO0GSuXZu5s/edit?usp=sharing)
 - 4.01 情報収集
   - [06 エントリーポイントの特定](01-Information_Gathering/06-Identify_Application_Entry_Points.md)
 - 4.05 認可
