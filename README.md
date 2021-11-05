@@ -31,6 +31,8 @@ Railsでアプリケーション開発をしている組織のセキュリティ
   - [07 Session Timeout](06-Session_Management_Testing/07-Testing_Session_Timeout.md)
 - 4.07 入力値の取り扱い
   - [05 SQL Injection](07-Input_Validation_Testing/05-Testing_for_SQL_Injection.md)
+  - [11 Code Injection](07-Input_Validation_Testing/11-Testing_for_Code_Injection.md)
+  - [12 Command Injection](07-Input_Validation_Testing/12-Testing_for_Command_Injection.md)
 - 4.10 ビジネスロジック
   - [03 Testing Integrity Checks - Mass Assignment](10-Business_Logic_Testing/03-03-Test_Integrity_Checks_Mass_Assignment.md)
   - [03 Testing Integrity Checks - 外部キーの不正な更新](10-Business_Logic_Testing/03-Test_Integrity_Checks_Foreign_Key_Manipulation.md)
