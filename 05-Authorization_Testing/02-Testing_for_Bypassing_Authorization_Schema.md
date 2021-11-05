@@ -141,17 +141,6 @@ class ArticlesController < ApplicationController
 
 マトリクスを Rails ルーティングに当てはめると次のような表が完成します。
 
-<!--
-Rails の標準的な仕様において、権限とアクションの対応は下記となります。
-
-|権限|アクション|
-|:--|:--|
-|作成|new, create|
-|参照|index, show|
-|変更|edit, update|
-|削除|destroy|
--->
-
 |権限|action|route|未ログイン|ユーザA|ユーザB|管理者|
 |:--|:--|:--|:--|:--|:--|:--|
 |作成|new|`GET /articles/new`||〇|〇|〇|
@@ -167,21 +156,13 @@ Rails の標準的な仕様において、権限とアクションの対応は�
 
 ルートの数 10 x ユーザの種類 4 = 40 のテストケースができました。この40パターンをテストし、想定通りの応答が帰ってくるかを確認します。
 
-### GETのアクションのテスト：index, show, edit
+リクエストの発行には OWASP ZAP の Fuzzer や、Burp Suite の Intruder 等を使うと効率的です。
 
-TBW
+### CSRFトークン検証の突破
 
-### GET以外のアクションのテスト：create, update, destroy
+Webブラウザを使わずに GET 以外 (POST, PUT, PATCH, DELETE) のリクエストを送ると、`422 Unprocessable Entity` 応答が帰ってくる場合があります。これは Rails の CSRF 攻撃対策によるものです。
 
-※注意：GET以外のアクションを実行するとリソースが変更されたり破壊されたりする危険性があります。テスト実行の際は十分注意してください。
-
-#### CSRFトークン検討
-
-RailsではGET以外のアクション(POST, PUT, PATCH, DELETE)は既定でトークンによるCSRF対策が有効になっています。
-
-そのため、Webブラウザを使わずにリクエストを送るにはCSRFトークンを付与する必要があります。
-
-Rails ではセッション(Cookie)に紐づくCSRFトークンをHTMLの`<head>`の中に発行します。
+Railsではトークンを使ったCSRF対策を実装しているため、リクエストを受理させるにはリクエストにCSRFトークンを付与する必要があります。CSRFトークンはHTMLの`<head>`の中に発行されます。
 
 ```html
 <html>
@@ -191,7 +172,7 @@ Rails ではセッション(Cookie)に紐づくCSRFトークンをHTMLの`<head>
     <meta name="csrf-token" content="DFZR1rcR...【省略】...YwQsog==" />
 ```
 
-このトークンをリクエストヘッダ `X-CSRF-TOKEN` に乗せればCSRFトークン検証を突破できます。
+このトークンをリクエストヘッダ `X-CSRF-TOKEN` に乗せればCSRF対策を突破できます。
 
 ```http
 POST /hoge HTTP/1.1
