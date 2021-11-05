@@ -18,12 +18,13 @@
 
 ```ruby
 def test_send
-    user = User.send(params[:method])
-    render status: 200, json: user
+    info = current_user.send(params[:method])
+    render status: 200, json: info
 end
 ```
 
-攻撃リクエストの例
+例えば次のようなリクエストを送信すると `current_user.reset_password` が実行できます。
+
 ```http
 GET /test_send?method=reset_password
 ```
@@ -39,7 +40,8 @@ def test_const
 end
 ```
 
-攻撃リクエストの例
+例えば次のようなリクエストを送信すると `SecretTable.find(1)` の結果を参照できます。
+
 ```http
 GET /test_const?src=SecretTable&id=1
 ```
@@ -55,7 +57,7 @@ def test_eval
 end
 ```
 
-攻撃リクエストの例
+例えば次のようなリクエストを送信すると `sleep(5)` を実行できます。
 ```http
 GET /test/test_eval?id=1)%3Bsleep(5
 ```

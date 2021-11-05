@@ -21,7 +21,8 @@ def test_command
 end
 ```
 
-攻撃リクエストの例
+例えば次のようなリクエストを送信すると `cat config/routes.rb` の実行結果を取得できます。
+
 ```http
 GET /test_command?ip=127.0.0.1|cat%20config/routes.rb
 ```
