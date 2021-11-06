@@ -7,9 +7,9 @@ Rails アプリケーションの脆弱性を発見し検証するためのセ�
 
 ## 想定する利用者
 
-Railsでアプリケーション開発をしている組織のセキュリティ担当者を想定しています。Railsのソースコードをある程度読めるスキルが必要です。
+Railsでアプリケーション開発をしている組織のセキュリティテスターを想定しています。Railsのソースコードをある程度読めるスキルが必要です。
 
-脆弱性を作りこみたくない Rails アプリ開発者にも役立つかもしれません。
+セキュリティテスター以外でも、脆弱性を作りこみたくない Rails アプリ開発者やQA部門のテスターにも役立つかもしれません。
 
 ## 目次
 
@@ -36,6 +36,7 @@ Railsでアプリケーション開発をしている組織のセキュリティ
   - [11 Cross Origin Resource Sharing (CORS)](11-Client-side_Testing/07-Testing_Cross_Origin_Resource_Sharing.md)
 - 4.99 未分類
   - [JSONからの情報漏洩](99-misc/JSONからの情報漏洩.md)
+  - [Ransack からの情報漏洩](99-misc/Ransackからの情報漏洩.md)
   - [Denial of Service (DoS) - 上限値がない](99-misc/Denial_of_Service_上限値がない.md)
-  - [Ransack による情報漏洩](99-misc/Ransackからの情報漏洩.md)
+  - [Denial of Service (DoS) - ReDoS](99-misc/Denial_of_Service_ReDoS.md)
   - [脆弱性が報告されているGemの使用](99-misc/脆弱性が報告されているGemの使用.md)
