@@ -4,15 +4,15 @@
 
 コードインジェクションのテストです。
 
-## 静的テスト
+## テスト方法
 
-動的にオブジェクトを生成したりメソッドを実行できる `send`, `constantize`, `eval` を使用しているソースコードをレビューします。これらのメソッドに動的パラメータを使用している場合、脆弱な可能性が高いです。
+動的にオブジェクトを生成したりメソッドを実行できる `send`, `constantize`, `eval` を使用しているソースコードをレビューします。これらのメソッドに動的パラメータを使用している場合、脆弱な可能性が高いため、動的テストでパラメータを検証します。
 
 検索キーワードの例：`send|constantize|eval`
 
-### 脆弱なコードの例
+## 脆弱なコードと攻撃パラメータの例
 
-#### send
+### send
 
 次のコードでは、Userクラスの任意のメソッドを実行できてしまいます。
 
@@ -23,13 +23,13 @@ def test_send
 end
 ```
 
-例えば次のようなリクエストを送信すると `current_user.reset_password` が実行できます。
+次のリクエストを送信すると `current_user.reset_password` が実行できます。
 
 ```http
 GET /test_send?method=reset_password
 ```
 
-#### constantize
+### constantize
 
 次のコードでは、任意のクラスのfindメソッドを実行できてしまいます。
 
@@ -40,13 +40,13 @@ def test_const
 end
 ```
 
-例えば次のようなリクエストを送信すると `SecretTable.find(1)` の結果を参照できます。
+次のリクエストを送信すると `SecretTable.find(1)` の結果を参照できます。
 
 ```http
 GET /test_const?src=SecretTable&id=1
 ```
 
-#### eval
+### eval
 
 次のコードでは、任意のRubyコードを実行できてしまいます。
 
@@ -57,12 +57,12 @@ def test_eval
 end
 ```
 
-例えば次のようなリクエストを送信すると `sleep(5)` を実行できます。
+次のリクエストを送信すると `sleep(5)` を実行できます。
 ```http
 GET /test/test_eval?id=1)%3Bsleep(5
 ```
 
-### 安全なコードの例
+## 安全なコードの例
 
 動的パラメータを直接使用していない場合、安全です。
 
@@ -76,10 +76,6 @@ mode = params[:method] == 1 ? 'first' : 'last'
 ```ruby
 return head 400 unless %w[User Customer].include?(params[:src])
 ```
-
-## 動的テスト
-
-ソースコードレビューやBrakemanでコードインジェクションの疑いがあるコードが見つかった場合、該当するアクション・パラメータをテストします。
 
 ## 追加情報
 
