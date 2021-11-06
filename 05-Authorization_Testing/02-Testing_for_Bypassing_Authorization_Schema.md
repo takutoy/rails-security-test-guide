@@ -160,9 +160,9 @@ class ArticlesController < ApplicationController
 
 ### CSRFトークン検証の突破
 
-Webブラウザを使わずに GET 以外 (POST, PUT, PATCH, DELETE) のリクエストを送ると、`422 Unprocessable Entity` 応答が帰ってくる場合があります。これは Rails の CSRF 攻撃対策によるものです。
+Webブラウザを使わずに GET 以外 (POST, PUT, PATCH, DELETE) のリクエストを送ると、`422 Unprocessable Entity` 応答が帰ってくる場合があります。これは Rails の CSRF 対策によるものです。
 
-Railsではトークンを使ったCSRF対策を実装しているため、リクエストを受理させるにはリクエストにCSRFトークンを付与する必要があります。CSRFトークンはHTMLの`<head>`の中に発行されます。
+Rails ではトークンを使ったCSRF対策を実装しているため、リクエストを受理させるにはリクエストにCSRFトークンを付与する必要があります。CSRFトークンはHTMLの`<head>`の中に発行されます。
 
 ```html
 <html>
