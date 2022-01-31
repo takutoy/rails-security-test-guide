@@ -40,3 +40,4 @@ Railsでアプリケーション開発をしている組織のセキュリティ
   - [Denial of Service (DoS) - 上限値がない](99-misc/Denial_of_Service_上限値がない.md)
   - [Denial of Service (DoS) - ReDoS](99-misc/Denial_of_Service_ReDoS.md)
   - [脆弱性が報告されているGemの使用](99-misc/脆弱性が報告されているGemの使用.md)
+  - [変数のスコープの誤りによる競合や漏洩](99-misc/Race_Condition_and_Information_Disclosure_by_Improper_Variable_Scope.md)
