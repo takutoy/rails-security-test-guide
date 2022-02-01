@@ -35,9 +35,9 @@ Railsでアプリケーション開発をしている組織のセキュリティ
 - 4.11 クライアントサイド
   - [11 Cross Origin Resource Sharing (CORS)](11-Client-side_Testing/07-Testing_Cross_Origin_Resource_Sharing.md)
 - 4.99 未分類
-  - [JSONからの情報漏洩](99-misc/JSONからの情報漏洩.md)
-  - [Ransack からの情報漏洩](99-misc/Ransackからの情報漏洩.md)
-  - [Denial of Service (DoS) - 上限値がない](99-misc/Denial_of_Service_上限値がない.md)
+  - [JSONからの情報漏洩](99-misc/Improper_Json_Serialization_Information_Leakage.md)
+  - [Denial of Service (DoS) - 上限値がない](99-misc/Denial_of_Service_Unlimited_Number.md)
   - [Denial of Service (DoS) - ReDoS](99-misc/Denial_of_Service_ReDoS.md)
-  - [脆弱性が報告されているGemの使用](99-misc/脆弱性が報告されているGemの使用.md)
-  - [変数のスコープの誤りによる競合や漏洩](99-misc/Race_Condition_and_Information_Disclosure_by_Improper_Variable_Scope.md)
+  - [変数のスコープの誤りによる競合や漏洩](99-misc/Improper_Variable_Scope_Integrity_Comprimise.md)
+  - [Ransack からの情報漏洩](99-misc/Ransack_Information_Leakage.md)
+  - [脆弱性が報告されているGemの使用](99-misc/Using_Vulnerable_Gem.md)

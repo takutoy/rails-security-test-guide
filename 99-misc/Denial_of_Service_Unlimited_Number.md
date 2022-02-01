@@ -1,4 +1,4 @@
-# 4.xx.x Denial of Service (DoS) - 上限値がない
+# Denial of Service (DoS) - 上限値がない
 
 ## 概要
 
