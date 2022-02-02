@@ -38,6 +38,6 @@ Railsでアプリケーション開発をしている組織のセキュリティ
   - [JSONからの情報漏洩](99-misc/Improper_Json_Serialization_Information_Leakage.md)
   - [Denial of Service (DoS) - 上限値がない](99-misc/Denial_of_Service_Unlimited_Number.md)
   - [Denial of Service (DoS) - ReDoS](99-misc/Denial_of_Service_ReDoS.md)
-  - [変数のスコープの誤りによる競合や漏洩](99-misc/Improper_Variable_Scope_Integrity_Comprimise.md)
+  - [変数のスコープの誤りによる競合や漏洩](99-misc/Improper_Variable_Scope_Integrity_Compromise.md)
   - [Ransack からの情報漏洩](99-misc/Ransack_Information_Leakage.md)
   - [脆弱性が報告されているGemの使用](99-misc/Using_Vulnerable_Gem.md)
