@@ -67,6 +67,18 @@ class OtoiawaseController < ApplicationController
   protect_from_forgery with: :reset_session
 ```
 
+### GETメソッドでリソースを変更している
+
+GETメソッドのアクションでデータを作成、更新、削除をしている場合、CSRF攻撃に脆弱です。
+
+```ruby
+class HogeController < ApplicationController
+  # GET /articles/:id/change_to_public
+  def change_to_public
+    @article = @current_user.articles.find(params[:id])
+    @article.update(public: true)
+```
+
 ### CSRFについて補足
 
 CSRF攻撃はセッション Cookie に SameSite=Lax を明示的に設定することでも緩和可能です。
