@@ -2,7 +2,11 @@
 
 ## 概要
 
-TBD
+セッションの無効化が適切に実行されることを確認します。
+
+- ログアウト
+- タイムアウト
+- 権限の変更・無効化
 
 ## 静的テスト
 
@@ -12,31 +16,38 @@ TBD
 - `ActionDispatch::Session::CacheStore`
 - `ActionDispatch::Session::ActiveRecordStore`
 
+CookieStoreを使用している場合、次の事項に注意してください。
+
 ### CookieStore
 
-`config.session_store` に `expire_after` が設定されていることを確認します。
+CookieStore ではログアウト（サーバーサイドでのセッション無効化）ができません。サーバーサイドでのセッション無効化が必須の場合は CacheStore または ActiveRecordStore を使用してください。CookieStore を使う場合は、セッションの有効期間を設定してリスクを低減できます。
 
-設定されていない
+有効期限は `config.session_store` に `expire_after` が設定されているかで確認できます。
+
+設定されていない場合：
 
 ```ruby
 config.session_store :cookie_store
 ```
 
-設定されている
+設定されている場合：
 
 ```ruby
 config.session_store :cookie_store, expire_after: 1.days
 ```
 
-### CacheStore
-
-### ActiveRecordStore
-
-### Devise
-
 ## 動的テスト
 
-TBD
+- ログアウト後にログアウト前のセッションIDを使用してみる
+
+## その他
+
+管理者により権限が変更されたときに、既存のセッションの権限も変更されるか。
+
+例：
+- 管理者によりユーザが無効化されたとき、ユーザのセッションは無効化されるか
+- 管理者によりテナントが無効化されたとき、テナントのユーザのログインやセッションは無効化されるか
+- 管理者によりテナントが無効化されたとき、テナントのユーザはパスワードリセットができるか
 
 ## references
 

@@ -56,18 +56,6 @@ def search
   @q = User.ransack(id_eq: 1)
 ```
 
-Strong Parameters で使用可能なクエリを制限している場合も安全です。
-
-```ruby
-def index
-  @q = User.ransack(search_params)
-end
-
-def search_params
-  params.require(:q).permit(:id_eq, :name_cont)
-end
-```
-
 `ransackable_attribute`, `ransackable_associations`, `ransortable_attributes` がモデルに定義されており、必要な属性・アソシエーションに絞られている場合も安全です。
 
 ```ruby
