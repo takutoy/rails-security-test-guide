@@ -19,6 +19,8 @@ Railsでアプリケーション開発をしている組織のセキュリティ
   - [セキュリティテスターのためのRuby on Rails コードリーディング](https://docs.google.com/presentation/d/18zITuFTR0AvYEZhuBc-drzuc6OTyAGovwO0GSuXZu5s/edit?usp=sharing)
 - 4.01 情報収集
   - [06 エントリーポイントの特定](01-Information_Gathering/06-Identify_Application_Entry_Points.md)
+- 4.04 認証
+  - [09 Testing for Weak Password Change or Reset Functionalities](04-Authentication_Testing/09_Testing_for_Weak_Password_Change_or_Reset_Functionalities.md)
 - 4.05 認可
   - [02 Bypassing Authorization Schema](05-Authorization_Testing/02-Testing_for_Bypassing_Authorization_Schema.md)
   - [04 Insecure Direct Object Reference (IDOR)](05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References.md)
@@ -29,6 +31,8 @@ Railsでアプリケーション開発をしている組織のセキュリティ
   - [05 SQL Injection](07-Input_Validation_Testing/05-Testing_for_SQL_Injection.md)
   - [11 Code Injection](07-Input_Validation_Testing/11-Testing_for_Code_Injection.md)
   - [12 Command Injection](07-Input_Validation_Testing/12-Testing_for_Command_Injection.md)
+- 4.08 エラーハンドリング 
+  - [01 Testing for Improper Error Handling](08-Testing_for_Error_Handling/01-Testing_for_Improper_Error_Handling.md)
 - 4.10 ビジネスロジック
   - [03 Testing Integrity Checks - Mass Assignment](10-Business_Logic_Testing/03-Test_Integrity_Checks_Mass_Assignment.md)
   - [03 Testing Integrity Checks - 外部キーの不正な更新](10-Business_Logic_Testing/03-Test_Integrity_Checks_Foreign_Key_Manipulation.md)

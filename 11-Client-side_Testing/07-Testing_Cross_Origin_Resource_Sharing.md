@@ -14,12 +14,6 @@ CORSの設定ミスは Same Origin Policy によるセキュリティを緩め�
 
 ### 脆弱なコードの例
 
-ワイルドカード
-
-```ruby
-headers['Access-Control-Allow-Origin'] = '*'
-```
-
 Originリクエストヘッダを検証せずにコピー
 
 ```ruby
@@ -32,7 +26,15 @@ null
 headers['Access-Control-Allow-Origin'] = 'null'
 ```
 
-※非公開情報を含まない、オープンなAPIの場合のみ * を設定しても安全です。
+ワイルドカード ※
+
+```ruby
+headers['Access-Control-Allow-Origin'] = '*'
+```
+
+※次の場合は `*`` を設定しても安全です
+- 非公開情報を含まない、オープンなAPI
+- Cookieセッションを持たない、Authorizationヘッダ等で認証をするAPI
 
 ### 安全なコードの例
 
@@ -90,14 +92,6 @@ Origin: null
 
 ### 脆弱なレスポンスの例
 
-Access-Control-Allow-Origin ヘッダがワイルドカードの場合、脆弱です。
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/javascript
-Access-Control-Allow-Origin: *
-```
-
 Access-Control-Allow-Origin ヘッダがnullの場合、脆弱です。
 
 ```http
@@ -112,6 +106,14 @@ Access-Control-Allow-Origin ヘッダがリクエストの Origin ヘッダと�
 HTTP/1.1 200 OK
 Content-Type: application/javascript
 Access-Control-Allow-Origin: https://evil.com
+```
+
+Access-Control-Allow-Origin ヘッダがワイルドカードの場合、脆弱ですな可能性があります。（↑のワイルドカード※を参照）
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/javascript
+Access-Control-Allow-Origin: *
 ```
 
 ### 安全なレスポンスの例
